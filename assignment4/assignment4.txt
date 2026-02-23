@@ -1,0 +1,4 @@
+first off, sorry for this assignment being quite late
+for some reason when i try to call a header function it basically explodes
+so i'm just uploading what i have and i hope that this proves that i understand
+because i'm not smart enough to figure out why it doesn't work
