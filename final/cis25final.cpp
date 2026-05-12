@@ -315,36 +315,34 @@ int main() {
             accountFile << saveData << "[END]";
             accountFile.close();
         } else {
-            if (menu1 != 0) {
-                // account management menu
-                int menu2;
-                do {
-                    cout << "Managing " << accountGachas[menu1 - 1]->getInfo("game") << " account." << endl;
-                    cout << "1. View account info" << endl;
-                    cout << "2. Manage " << accountGachas[menu1 - 1]->getInfo("currencyName") << endl;
-                    cout << "3. View " << accountGachas[menu1 - 1]->getInfo("pulls") << endl;
-                    cout << "Select an option (0 to return): ";
-                    cin >> menu2;
-                    cout << endl;
-                    if (menu2 < 0 || menu2 > 3) {
-                        cout << "[Invalid selection. Please try again.]" << endl;
-                    } else {
-                        if (menu2 == 1) {
-                            accountGachas[menu1 - 1]->printInfo();
-                        } else if (menu2 == 2) {
-                            string changeType;
-                            double amount;
-                            cout << "Enter change type (add, subtract, set): ";
-                            cin >> changeType;
-                            cout << "Enter amount: ";
-                            cin >> amount;
-                            accountGachas[menu1 - 1]->changeCurrency(changeType, amount);
-                        } else if (menu2 == 3) {
-                            accountGachas[menu1 - 1]->printPulls();
-                        }
+            // account management menu
+            int menu2;
+            do {
+                cout << "Managing " << accountGachas[menu1 - 1]->getInfo("game") << " account." << endl;
+                cout << "1. View account info" << endl;
+                cout << "2. Manage " << accountGachas[menu1 - 1]->getInfo("currencyName") << endl;
+                cout << "3. View " << accountGachas[menu1 - 1]->getInfo("pulls") << endl;
+                cout << "Select an option (0 to return): ";
+                cin >> menu2;
+                cout << endl;
+                if (menu2 < 0 || menu2 > 3) {
+                    cout << "[Invalid selection. Please try again.]" << endl;
+                } else {
+                    if (menu2 == 1) {
+                        accountGachas[menu1 - 1]->printInfo();
+                    } else if (menu2 == 2) {
+                        string changeType;
+                        double amount;
+                        cout << "Enter change type (add, subtract, set): ";
+                        cin >> changeType;
+                        cout << "Enter amount: ";
+                        cin >> amount;
+                        accountGachas[menu1 - 1]->changeCurrency(changeType, amount);
+                    } else if (menu2 == 3) {
+                        accountGachas[menu1 - 1]->printPulls();
                     }
-                } while (menu2 != 0);
-            }
+                }
+            } while (menu2 != 0);
         }
     } while (menu1 != 0);
     
